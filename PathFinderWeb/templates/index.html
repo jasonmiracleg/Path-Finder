@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>AI Model Form</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 min-h-screen flex items-center justify-center p-8">
+
+    <div class="max-w-4xl w-full bg-white shadow-lg rounded-lg p-8">
+        <h1 class="text-3xl font-bold text-center text-gray-800 mb-6">Submit Your Data</h1>
+        <form method="POST" action="{{ url_for('predict') }}">
+            <!-- GPA -->
+            <div class="mb-4">
+                <label class="block text-gray-700 font-medium mb-1" for="gpa">GPA</label>
+                <input type="number" step="0.01" min="2.0" max="4.0" id="gpa" name="gpa"
+                    class="w-full bg-gray-50 border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring focus:ring-blue-300"
+                    placeholder="Enter your GPA" required>
+            </div>
+
+            <!-- Extracurricular Activities -->
+            <div class="mb-4">
+                <label class="block text-gray-700 font-medium mb-1" for="extracurricular">Extracurricular
+                    Activities</label>
+                <input type="number" id="extracurricular_activities" name="extracurricular_activities"
+                    class="w-full bg-gray-50 border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring focus:ring-blue-300"
+                    placeholder="Number of activities" required>
+            </div>
+
+            <!-- Internships -->
+            <div class="mb-4">
+                <label class="block text-gray-700 font-medium mb-1" for="internships">Internships</label>
+                <input type="number" id="internships" name="internships"
+                    class="w-full bg-gray-50 border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring focus:ring-blue-300"
+                    placeholder="Number of internships" required>
+            </div>
+
+            <!-- Projects -->
+            <div class="mb-4">
+                <label class="block text-gray-700 font-medium mb-1" for="projects">Projects</label>
+                <input type="number" id="projects" name="projects"
+                    class="w-full bg-gray-50 border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring focus:ring-blue-300"
+                    placeholder="Number of projects" required>
+            </div>
+
+            <!-- Field Specific Courses -->
+            <div class="mb-4">
+                <label class="block text-gray-700 font-medium mb-1" for="field_specific_courses">Field Specific
+                    Courses</label>
+                <input type="number" id="field_specific_courses" name="field_specific_courses"
+                    class="w-full bg-gray-50 border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring focus:ring-blue-300"
+                    placeholder="Number of courses" required>
+            </div>
+
+            <!-- Leadership Positions -->
+            <div class="mb-4">
+                <label class="block text-gray-700 font-medium mb-1">Leadership Positions</label>
+                <div class="flex items-center">
+                    <input type="radio" name="leadership_positions" value="1" id="leadership-yes"
+                        class="mr-2 focus:ring-blue-300" required>
+                    <label for="leadership-yes" class="text-gray-600">Yes</label>
+                </div>
+                <div class="flex items-center mt-2">
+                    <input type="radio" name="leadership_positions" value="0" id="leadership-no"
+                        class="mr-2 focus:ring-blue-300">
+                    <label for="leadership-no" class="text-gray-600">No</label>
+                </div>
+            </div>
+
+            <!-- Research Experience -->
+            <div class="mb-4">
+                <label class="block text-gray-700 font-medium mb-1">Research Experience</label>
+                <div class="flex items-center">
+                    <input type="radio" name="research_experience" value="1" id="research-yes"
+                        class="mr-2 focus:ring-blue-300" required>
+                    <label for="research-yes" class="text-gray-600">Yes</label>
+                </div>
+                <div class="flex items-center mt-2">
+                    <input type="radio" name="research_experience" value="0" id="research-no"
+                        class="mr-2 focus:ring-blue-300">
+                    <label for="research-no" class="text-gray-600">No</label>
+                </div>
+            </div>
+
+            <!-- Industry Certification -->
+            <div class="mb-4">
+                <label class="block text-gray-700 font-medium mb-1">Industry Certification</label>
+                <div class="flex items-center">
+                    <input type="radio" name="industry_certifications" value="1" id="certification-yes"
+                        class="mr-2 focus:ring-blue-300" required>
+                    <label for="certification-yes" class="text-gray-600">Yes</label>
+                </div>
+                <div class="flex items-center mt-2">
+                    <input type="radio" name="industry_certifications" value="0" id="certification-no"
+                        class="mr-2 focus:ring-blue-300">
+                    <label for="certification-no" class="text-gray-600">No</label>
+                </div>
+            </div>
+
+            <!-- Skills -->
+            {% for skill in skills %}
+            <div class="mb-4">
+                <label class="block text-gray-700 font-medium mb-1">{{ skill }}</label>
+                <select name="{{ skill.lower().replace(' ', '_') }}"
+                        class="w-full bg-gray-50 border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring focus:ring-blue-300"
+                        required>
+                    <option value="" disabled selected>Select skill level</option>
+                    <option value="0">0 - Beginner</option>
+                    <option value="1">1 - Novice</option>
+                    <option value="2">2 - Intermediate</option>
+                    <option value="3">3 - Proficient</option>
+                    <option value="4">4 - Expert</option>
+                </select>
+            </div>
+            {% endfor %}
+
+
+            <!-- Submit Button -->
+            <div>
+                <button type="submit"
+                    class="w-full bg-blue-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-300">
+                    Submit
+                </button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
