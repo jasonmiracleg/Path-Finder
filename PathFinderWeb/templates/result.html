@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Result Page</title>
+    <!-- Include Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans">
+    <div class="max-w-md mx-auto p-4 bg-white shadow-md rounded-lg mt-10">
+        <h1 class="text-2xl font-bold text-center mb-6">Your Result</h1>
+        <div class="text-center">
+            {% set field_map = {
+                0: 'Architecture',
+                1: 'Art & Music',
+                2: 'Business',
+                3: 'Computer Science',
+                4: 'Engineering',
+                5: 'Finance',
+                6: 'Health Science',
+                7: 'Marketing',
+                8: 'Natural Science',
+                9: 'Social Science',
+            } %}
+            {% if result in field_map %}
+                <h2 class="text-3xl font-semibold text-blue-600">{{ field_map[result] }}</h2>
+            {% else %}
+                <p class="text-xl text-gray-600">Unknown field</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
