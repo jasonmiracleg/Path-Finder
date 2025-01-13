@@ -14,6 +14,7 @@
             <!-- GPA -->
             <div class="mb-4">
                 <label class="block text-gray-700 font-medium mb-1" for="gpa">GPA</label>
+                <p class="text-sm text-gray-500 italic mt-1">Please enter a GPA between 2.5 and 5.0.</p>
                 <input type="number" step="0.01" min="2.5" max="5.0" id="gpa" name="gpa"
                     class="w-full bg-gray-50 border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring focus:ring-blue-300"
                     placeholder="Enter your GPA" required>
@@ -23,6 +24,7 @@
             <div class="mb-4">
                 <label class="block text-gray-700 font-medium mb-1" for="extracurricular">Extracurricular
                     Activities</label>
+                    <p class="text-sm text-gray-500 italic mt-1">The number of extracurricular activities the student has participated in outside of their regular curriculum</p>
                 <input type="number" id="extracurricular_activities" name="extracurricular_activities"
                     class="w-full bg-gray-50 border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring focus:ring-blue-300"
                     placeholder="Number of activities" required>
@@ -31,6 +33,7 @@
             <!-- Internships -->
             <div class="mb-4">
                 <label class="block text-gray-700 font-medium mb-1" for="internships">Internships</label>
+                <p class="text-sm text-gray-500 italic mt-1">The number of internships the student has completed.</p>
                 <input type="number" id="internships" name="internships"
                     class="w-full bg-gray-50 border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring focus:ring-blue-300"
                     placeholder="Number of internships" required>
@@ -39,6 +42,7 @@
             <!-- Projects -->
             <div class="mb-4">
                 <label class="block text-gray-700 font-medium mb-1" for="projects">Projects</label>
+                <p class="text-sm text-gray-500 italic mt-1">The number of relevant projects completed by the student.</p>
                 <input type="number" id="projects" name="projects"
                     class="w-full bg-gray-50 border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring focus:ring-blue-300"
                     placeholder="Number of projects" required>
@@ -48,6 +52,7 @@
             <div class="mb-4">
                 <label class="block text-gray-700 font-medium mb-1" for="field_specific_courses">Field Specific
                     Courses</label>
+                    <p class="text-sm text-gray-500 italic mt-1">The number of courses taken by the student specific to their field of study</p>
                 <input type="number" id="field_specific_courses" name="field_specific_courses"
                     class="w-full bg-gray-50 border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring focus:ring-blue-300"
                     placeholder="Number of courses" required>
@@ -56,6 +61,9 @@
             <!-- Leadership Positions -->
             <div class="mb-4">
                 <label class="block text-gray-700 font-medium mb-1">Leadership Positions</label>
+                <p class="text-sm text-gray-500 italic mt-1">Indicates whether the student has held any leadership positions in school organizations or clubs (binary variable).
+
+                </p>
                 <div class="flex items-center">
                     <input type="radio" name="leadership_positions" value="1" id="leadership-yes"
                         class="mr-2 focus:ring-blue-300" required>
@@ -71,6 +79,7 @@
             <!-- Research Experience -->
             <div class="mb-4">
                 <label class="block text-gray-700 font-medium mb-1">Research Experience</label>
+                <p class="text-sm text-gray-500 italic mt-1"> Indicates whether the student has participated in any research projects (binary variable).</p>
                 <div class="flex items-center">
                     <input type="radio" name="research_experience" value="1" id="research-yes"
                         class="mr-2 focus:ring-blue-300" required>
@@ -86,6 +95,7 @@
             <!-- Industry Certification -->
             <div class="mb-4">
                 <label class="block text-gray-700 font-medium mb-1">Industry Certification</label>
+                <p class="text-sm text-gray-500 italic mt-1">Indicates whether the student has certification or not.</p>
                 <div class="flex items-center">
                     <input type="radio" name="industry_certifications" value="1" id="certification-yes"
                         class="mr-2 focus:ring-blue-300" required>
